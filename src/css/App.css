@@ -1,1 +1,76 @@
 @import "tachyons";
+
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+
+body {
+  background-color: #FBFBFB;
+}
+
+/* input:focus {
+  outline: none;
+} */
+
+.font-nunito {
+  font-family: 'Nunito', sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+.font-nunito-bold {
+  font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+}
+
+.bg-wg-black {
+  background-color: #4F4F4F;
+}
+
+.wg-black {
+  color: #4F4F4F;
+}
+
+.bg-wg-white {
+  background-color: #FBFBFB;
+}
+
+.wg-white {
+  color: #FBFBFB;
+}
+
+.bg-wg-broken-white {
+  background-color: #F2F2F2;
+}
+
+.wg-broken-white {
+  color: #F2F2F2
+}
+
+.bg-wg-gold {
+  background-color: #FFC857;
+}
+
+.wg-color {
+  color: #FFC857;
+}
+
+.bg-wg-red {
+  background-color: #DB5A42
+}
+
+.wg-red {
+  color: #DB5A42;
+}
+
+.bg-wg-blue {
+  color: #17BEBB
+}
+
+.wg-blue {
+  color: #17BEBB;
+}
+
+.bg-wg-yellow {
+  background-color: #FFC857;
+}
+
+.wg-yellow {
+  color: #FFC857;
+}

@@ -1,0 +1,33 @@
+<svg width="44" height="8" viewBox="0 0 44 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>5 Stars</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(763 342)">
+<rect x="-763" y="-342" width="44" height="8" fill="#E5E5E5"/>
+<clipPath id="clip-0" clip-rule="evenodd">
+<path d="M -970 -486L -650 -486L -650 82L -970 82L -970 -486Z" fill="#FFFFFF"/>
+</clipPath>
+<g id="Component Assets" clip-path="url(#clip-0)">
+<path d="M -970 -486L -650 -486L -650 82L -970 82L -970 -486Z" fill="#FBFBFB"/>
+<g id="5 Stars">
+<g id="Star">
+<use xlink:href="#path0_fill" transform="translate(-763 -342)" fill="#FFC857"/>
+</g>
+<g id="Star">
+<use xlink:href="#path0_fill" transform="translate(-753 -342)" fill="#FFC857"/>
+</g>
+<g id="Star">
+<use xlink:href="#path0_fill" transform="translate(-744 -342)" fill="#FFC857"/>
+</g>
+<g id="Star">
+<use xlink:href="#path0_fill" transform="translate(-736 -342)" fill="#FFC857"/>
+</g>
+<g id="Star">
+<use xlink:href="#path0_fill" transform="translate(-727 -342)" fill="#FFC857"/>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 4 0L 4.89806 2.76393L 7.80423 2.76393L 5.45308 4.47214L 6.35114 7.23607L 4 5.52786L 1.64886 7.23607L 2.54692 4.47214L 0.195774 2.76393L 3.10194 2.76393L 4 0Z"/>
+</defs>
+</svg>

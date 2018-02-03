@@ -1,0 +1,40 @@
+<svg width="27" height="28" viewBox="0 0 27 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>Search Icon</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(919 297)">
+<g id="Search Icon">
+<g id="Search Icon" filter="url(#filter0_d)">
+<g id="Line">
+<use xlink:href="#path0_stroke" transform="matrix(-0.650791 0.759257 -0.759257 -0.650791 -909 -286.04)" fill="#D48035"/>
+</g>
+<g id="Ellipse">
+<use xlink:href="#path1_fill" transform="translate(-911 -297)" fill="#17BEBB"/>
+<mask id="mask0_outline_ins">
+<use xlink:href="#path1_fill" fill="white" transform="translate(-911 -297)"/>
+</mask>
+<g mask="url(#mask0_outline_ins)">
+<use xlink:href="#path2_stroke_2x" transform="translate(-911 -297)" fill="#4F4F4F"/>
+</g>
+</g>
+<g id="Ellipse 2">
+<use xlink:href="#path3_fill" transform="matrix(0.850477 -0.526012 0.526012 0.850477 -904 -287.936)" fill="#F2F2F2"/>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_d" filterUnits="userSpaceOnUse" x="-919" y="-297" width="27" height="28" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 255 0"/>
+<feOffset dx="0" dy="4"/>
+<feGaussianBlur stdDeviation="2"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+</filter>
+<path id="path0_stroke" d="M 0 0L 9.21954 0L 9.21954 -2L 0 -2L 0 0Z"/>
+<path id="path1_fill" d="M 14.6453 6.96296C 14.6453 10.8085 11.3668 13.9259 7.32263 13.9259C 3.27846 13.9259 0 10.8085 0 6.96296C 0 3.11742 3.27846 0 7.32263 0C 11.3668 0 14.6453 3.11742 14.6453 6.96296Z"/>
+<path id="path2_stroke_2x" d="M 12.6453 6.96296C 12.6453 9.6102 10.3584 11.9259 7.32263 11.9259L 7.32263 15.9259C 12.3753 15.9259 16.6453 12.0068 16.6453 6.96296L 12.6453 6.96296ZM 7.32263 11.9259C 4.28691 11.9259 2 9.6102 2 6.96296L -2 6.96296C -2 12.0068 2.27 15.9259 7.32263 15.9259L 7.32263 11.9259ZM 2 6.96296C 2 4.31572 4.28691 2 7.32263 2L 7.32263 -2C 2.27 -2 -2 1.91913 -2 6.96296L 2 6.96296ZM 7.32263 2C 10.3584 2 12.6453 4.31572 12.6453 6.96296L 16.6453 6.96296C 16.6453 1.91913 12.3753 -2 7.32263 -2L 7.32263 2Z"/>
+<path id="path3_fill" d="M 4 1C 4 1.55228 3.10457 2 2 2C 0.895431 2 0 1.55228 0 1C 0 0.447715 0.895431 0 2 0C 3.10457 0 4 0.447715 4 1Z"/>
+</defs>
+</svg>

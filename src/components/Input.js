@@ -10,7 +10,7 @@ const input = (props) => {
         <input 
           type="text"  
           placeholder="Cari kedai" 
-          className="w-80 font-nunito wg-black ba-0" 
+          className="w-100 pr3 mr1 font-nunito wg-black ba-0" 
           style={{border: "none", outline: "none"}}/>
       </div>
     )

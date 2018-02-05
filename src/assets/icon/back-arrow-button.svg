@@ -1,23 +1,23 @@
 <svg width="29" height="22" viewBox="0 0 29 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <title>Back Button</title>
 <desc>Created using Figma</desc>
-<g id="Canvas" transform="translate(705 302)">
+<g id="Canvas" transform="translate(709 302)">
 <g id="Back Button">
 <g id="Back Button">
 <g id="Rectangle">
-<use xlink:href="#path0_fill" transform="matrix(0.865926 0.500173 -0.499827 0.866125 -703.02 -292.132)" fill="#F2F2F2"/>
+<use xlink:href="#path0_fill" transform="matrix(0.865926 0.500173 -0.499827 0.866125 -707.02 -292.132)" fill="#F2F2F2"/>
 </g>
 <g id="Rectangle">
-<use xlink:href="#path1_fill" transform="translate(-705 -292.716)" fill="#F2F2F2"/>
+<use xlink:href="#path1_fill" transform="translate(-709 -292.716)" fill="#F2F2F2"/>
 </g>
 <g id="Rectangle">
-<use xlink:href="#path0_fill" transform="matrix(0.865926 -0.500173 0.499827 0.866125 -705 -292.778)" fill="#F2F2F2"/>
+<use xlink:href="#path0_fill" transform="matrix(0.865926 -0.500173 0.499827 0.866125 -709 -292.778)" fill="#F2F2F2"/>
 </g>
 </g>
 </g>
 </g>
 <defs>
-<path id="path0_fill" d="M 0 1.68012C 0 0.752217 0.752218 0 1.68013 0L 16.7567 0C 17.6846 0 18.4368 0.752217 18.4368 1.68012L 18.4368 1.68012C 18.4368 2.60803 17.6846 3.36025 16.7567 3.36025L 1.68012 3.36025C 0.752215 3.36025 0 2.60803 0 1.68012L 0 1.68012Z"/>
-<path id="path1_fill" d="M 0 1.68799C 0 0.75574 0.75574 0 1.68799 0L 27.312 0C 28.2443 0 29 0.75574 29 1.68799L 29 1.68799C 29 2.62025 28.2443 3.37599 27.312 3.37599L 1.68799 3.37599C 0.75574 3.37599 0 2.62025 0 1.68799L 0 1.68799Z"/>
+<path id="path0_fill" d="M 0 1.68012C 0 0.752217 0.752218 0 1.68012 0L 16.7567 0C 17.6846 0 18.4368 0.752217 18.4368 1.68012C 18.4368 2.60803 17.6846 3.36025 16.7567 3.36025L 1.68012 3.36025C 0.752215 3.36025 0 2.60803 0 1.68012Z"/>
+<path id="path1_fill" d="M 0 1.68799C 0 0.75574 0.75574 0 1.68799 0L 27.312 0C 28.2443 0 29 0.75574 29 1.68799C 29 2.62025 28.2443 3.37599 27.312 3.37599L 1.68799 3.37599C 0.75574 3.37599 0 2.62025 0 1.68799Z"/>
 </defs>
 </svg>

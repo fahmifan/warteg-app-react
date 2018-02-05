@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Auxi from './hoc/Auxi';
-import Home from './layout/Home';
+import Homepage from './layout/Homepage';
 import SignIn from './layout/SignIn';
 import SignUp from './layout/SingUp';
 
@@ -11,9 +11,9 @@ class App extends Component {
       <Auxi>
         {
           // <Home />
-          // <SignIn />
+          <SignIn />
+          // <SignUp />
         }  
-        <SignUp />
       </Auxi>
     );
   }

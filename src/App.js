@@ -10,7 +10,7 @@ class App extends Component {
     return (
       <Auxi>
         {
-          // <Home />
+          // <Homepage />
           <SignIn />
           // <SignUp />
         }  

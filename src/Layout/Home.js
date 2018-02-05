@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Navbar from '../components/Navbar';
 import Input from '../components/Input';
+import StreetFoodCard from '../components/StreetFoodCard';
 import FoodCard from '../components/FoodCard';
 
 import img from '../assets/pics/nasi-goreng-kambing.jpg';
@@ -16,10 +17,13 @@ export default class Home extends Component {
           <Input />
         </div>
         <div className="flex flex-wrap justify-center">
-          <FoodCard img={img}>Sayang</FoodCard>
-          <FoodCard img={img}>Jalan Kol A Syam</FoodCard>
-          <FoodCard img={img}>Ciseke Besar</FoodCard>
-          <FoodCard img={img}>Sukawening</FoodCard>
+          <FoodCard
+            img={img} 
+          />
+          <StreetFoodCard img={img}>Sayang</StreetFoodCard>
+          <StreetFoodCard img={img}>Jalan Kol A Syam</StreetFoodCard>
+          <StreetFoodCard img={img}>Ciseke Besar</StreetFoodCard>
+          <StreetFoodCard img={img}>Sukawening</StreetFoodCard>
         </div>
       </div>
     )

@@ -4,6 +4,7 @@ import Auxi from './hoc/Auxi';
 import Homepage from './layout/Homepage';
 import SignIn from './layout/SignIn';
 import SignUp from './layout/SingUp';
+import HomeSignedIn from './layout/HomeSignedIn';
 
 class App extends Component {
   render() {
@@ -11,8 +12,9 @@ class App extends Component {
       <Auxi>
         {
           // <Homepage />
-          <SignIn />
+          // <SignIn />
           // <SignUp />
+          <HomeSignedIn />
         }  
       </Auxi>
     );

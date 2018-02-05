@@ -1,12 +1,20 @@
 import React, { Component } from 'react';
+
+import Auxi from './hoc/Auxi';
 import Home from './layout/Home';
+import SignIn from './layout/SignIn';
+import SignUp from './layout/SingUp';
 
 class App extends Component {
   render() {
     return (
-      <div className="h-100">
-        <Home />
-      </div>
+      <Auxi>
+        {
+          // <Home />
+          // <SignIn />
+        }  
+        <SignUp />
+      </Auxi>
     );
   }
 }

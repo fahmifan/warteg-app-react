@@ -9,7 +9,7 @@ const foodCard = (props) => {
   const textShadow = {textShadow: '1px 1px rgba(0,0,0,0.2)'};
 
   return (
-    <div className="relative h4 w5 br3 border-box ma2 border-box shadow-3">
+    <div className="relative h4 w5 br3 border-box ma2 shadow-3">
       <TextWrapper>
         <p
           style={textShadow} 

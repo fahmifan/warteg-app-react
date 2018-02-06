@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import Auxi from '../hoc/Auxi';
 import NavBar from '../components/Navbar';
@@ -27,7 +28,7 @@ class SignUp extends Component {
           <InputField placeholder="Kata Sandi" />
           <Button>Daftar</Button>
           <p className="tc ma0 pt3 font-nunito wg-black f5 no">
-            Sudah punya akun ? Yuk <a href="#" className="link dim wg-blue">Masuk</a></p>
+            Sudah punya akun ? Yuk <Link to="/signin" className="link dim wg-blue">Masuk</Link></p>
         </main>
         <Footer />
       </Auxi>

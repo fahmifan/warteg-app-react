@@ -123,7 +123,11 @@ class Details extends Component {
 
     return (
       <Auxi>
-        <NavbarSignedIn />
+        {
+          this.state.isAuth ? 
+          <NavbarSignedIn homeClicked="/home"  dpClicked={this.dpClicked} />
+          : <Navbar clicked={this.wartegAppClicked} isBack={true} link={'/'} />
+        }
         <main>
           <FoodImageWrapper>
             <FoodImage img={img}/>

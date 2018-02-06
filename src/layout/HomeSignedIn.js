@@ -10,7 +10,7 @@ import img from '../assets/pics/nasi-goreng-kambing.jpg';
 class HomeSignedIn extends Component {
   
   foodCardClicked = (path) => {
-    this.props.history.push('/details' + `/${path}`)
+    this.props.history.push(`/details${`/${path}`}`)
   }
 
   dpClicked = () => {

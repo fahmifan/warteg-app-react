@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import Auxi from '../../hoc/Auxi';
 import NavbarSignedIn from '../../components/NavbarSignedIn';
+import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import AboutList from './AboutList';
 import CommentSection from './CommentSection';

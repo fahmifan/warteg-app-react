@@ -7,18 +7,34 @@ import Button from '../components/Button';
 import Footer from '../components/Footer';
 
 class SignIn extends Component {
+  
+  backArrowClicked = () => {
+    this.props.history.push('/')
+  }
+
+  masukBtnClicked = () => {
+
+  }
+
+  daftarClicked = () => {
+    this.props.history.push('/signup')
+  }
+
   render() {
     return (
       <Auxi>
-        <NavBar isSignedPage={true} />
+        <NavBar 
+          link={'/'} 
+          isBack={true} 
+          clicked={this.backArrowClicked}/>
         <header className="f1 tc font-nunito wg-black pt4"> 
           Masuk</header>
         <main className="center vh-75">
           <InputField placeholder="Email" />
           <InputField placeholder="Kata Sandi" />
-          <Button>Masuk</Button>
+          <Button clicked={this.masukBtnClicked}>Masuk</Button>
           <p className="tc ma0 pt3 font-nunito wg-black f5">
-            Belum mendaftar? <span className="link dim wg-blue">Daftar</span> Sekarang</p>
+            Belum mendaftar? <span onClick={this.daftarClicked} className="link dim wg-blue">Daftar</span> Sekarang</p>
         </main>
         <Footer />
       </Auxi>

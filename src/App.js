@@ -5,6 +5,7 @@ import Homepage from './layout/Homepage';
 import SignIn from './layout/SignIn';
 import SignUp from './layout/SingUp';
 import HomeSignedIn from './layout/HomeSignedIn';
+import Details from './layout/Details';
 
 class App extends Component {
   render() {
@@ -14,7 +15,8 @@ class App extends Component {
           // <Homepage />
           // <SignIn />
           // <SignUp />
-          <HomeSignedIn />
+          // <HomeSignedIn />
+          <Details />
         }  
       </Auxi>
     );

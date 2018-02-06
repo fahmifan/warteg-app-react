@@ -7,6 +7,11 @@ import Button from '../components/Button';
 import Footer from '../components/Footer';
 
 class SignUp extends Component {
+  
+  backArrowClicked = () => {
+    this.props.history.push('/')
+  }
+
   render() {
     return (
       <Auxi>

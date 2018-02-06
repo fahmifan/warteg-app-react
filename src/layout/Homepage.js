@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
 
 import Navbar from '../components/Navbar';
 import SearchField from '../components/SearchField';
@@ -8,26 +9,41 @@ import Footer from '../components/Footer';
 
 import img from '../assets/pics/nasi-goreng-kambing.jpg';
 
-export default class Home extends Component {
+class Homepage extends Component {
  
   state = {
-    isSignedPage: false
+    isSignedPage: false,
+    searched: ''
   }
 
   loginClicked = () => {
     this.setState({isSignedPage: !this.state.isSignedPage})
   }
 
+  onSearch = (evt) => {
+    console.log(evt.target.value);
+    const searched = evt.target.value;
+    this.setState({searched: searched});
+  }
+
+  cardClicked = (props) => {
+    console.log('card clicked');
+    this.props.history.push('/details/hipotesa');
+  }
+
   render() {
     return (
       <div className="h-100 bg-wg-white">
-        <Navbar isSignedPage={this.state.isSignedPage} clicked={this.loginClicked} />
+        <Navbar 
+          isBack={this.state.isSignedPage} 
+          clicked={this.loginClicked} 
+          link={'/'}/>
         <p className="f2 mt4 mb3 tc font-nunito-bold wg-black">Jatinangor</p>
         <div className="mb4">
-          <SearchField />
+          <SearchField typed={(evt) => this.onSearch(evt)} />
         </div>
         <div className="flex flex-wrap justify-center">
-          <FoodCard img={img} />
+          <FoodCard clicked={this.cardClicked} img={img} />
           <FoodCard img={img} />
           <FoodCard img={img} />
 
@@ -41,3 +57,5 @@ export default class Home extends Component {
     )
   }
 }
+
+export default Homepage;

@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 
 const footer = () => (
   <footer className="tc font-nunito-bold wg-black pv3 mt2" style={{backgroundColor: '#eee'}} >

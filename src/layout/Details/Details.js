@@ -8,11 +8,9 @@ import AboutList from './AboutList';
 import CommentSection from './CommentSection';
 import Image from '../../components/Image';
 import stars from '../../assets/icon/5-stars.svg';
-import checkList from '../../assets/icon/checklist-circle.svg';
 
 import img from '../../assets/pics/nasi-goreng-kambing.jpg';
 import maps from '../../assets/pics/map.png';
-import noDisplayPic from '../../assets/icon/noDisplayPic.svg';
 
 const FoodImageWrapper = styled.div`
   weight: 100%;
@@ -52,22 +50,13 @@ const Maps = Image.extend`
   border-radius: 0;
 `
 
-const CommentWrapper = styled.div`
-  height: 8rem;
-  width: 16rem;
-  position: relative;
-  box-sizing: border-box;
-  border-radius: 5px;
-  background-color: #f2f2f2;
-`
-
 const SectionWrapper = styled.section`
   padding-top: 2rem;
 `
 
 const SectionHeading = "pl3 pt3 mt3 f3 wg-black font-nunito-bold pb2";
 const SubSection = "relative bt b--black-20 w-90 mt3 ph3 pv3 center font-nunito wg-black";
-const AboutDesc = "relative flex items-center pt2";
+
 class Details extends Component {
   render() {
     const Makanan = (

@@ -24,7 +24,9 @@ const CommentLine = styled.p`
 const commentSection = (props) => (
   <CommentWrapper className="shadow-4 mt3">
     <div className="flex items-center">
-      <img src={ props.displayPic || noDisplayPic}
+      <img 
+        src={ props.displayPic || noDisplayPic}
+        alt="pic"
         className="relative left-0 pt1 pl1 di" />
       <span className="f4 di pl1 pt1">John Doe</span>
     </div>

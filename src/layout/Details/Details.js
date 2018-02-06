@@ -59,6 +59,21 @@ const SectionHeading = "pl3 pt3 mt3 f3 wg-black font-nunito-bold pb2";
 const SubSection = "relative bt b--black-20 w-90 mt3 ph3 pv3 center font-nunito wg-black";
 
 class Details extends Component {
+
+  state = {
+    isAuth: true
+  }
+
+  wartegAppClicked = () => {
+    // if not signed go back to '/' else '/home'
+    
+    this.props.history.push('/');
+  }
+
+  dpClicked = () => {
+    console.log('dp clicked should be accordion')
+  }
+
   render() {
     const Makanan = (
       <MenuItems>

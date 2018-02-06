@@ -15,7 +15,10 @@ class SignUp extends Component {
   render() {
     return (
       <Auxi>
-        <NavBar isSignedPage={true} />
+        <NavBar 
+          isBack={true}
+          clicked={this.backArrowClicked} 
+          link={'/'} />
         <header className="f1 tc font-nunito wg-black pt4"> 
           Daftar</header>
         <main className="center vh-75">

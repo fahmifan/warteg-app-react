@@ -1,18 +1,7 @@
 import * as actionTypes from '../../store/actions/actionTypes';
 
 const initState = {
-  restos: {
-    // {
-    //  id: null
-    //  name: null,
-    //  address: null,
-    //  pic: null,
-    //  rating: null,
-    //  openTime: null,
-    //  closeTime: null,
-    //  reviewCount: null
-    // },
-  },
+  restos: null,
   loading: false,
   error: null
 }

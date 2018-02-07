@@ -29,9 +29,9 @@ class Homepage extends Component {
     this.setState({searched: searched});
   }
 
-  cardClicked = (props) => {
+  cardClicked = (id) => {
     console.log('card clicked');
-    this.props.history.push('/details/hipotesa');
+    this.props.history.push(`/restos/${id}`);
   }
 
   componentDidMount() {
@@ -49,7 +49,7 @@ class Homepage extends Component {
           rating={resto.rating}
           img={img}
           isOpen={resto.isOpen}
-          clicked={this.cardClicked}
+          clicked={() => this.cardClicked(resto.id)}
          />
       );  
     }

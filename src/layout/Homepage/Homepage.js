@@ -6,6 +6,7 @@ import Navbar from '../../components/Navbar';
 import SearchField from '../../components/SearchField';
 import StreetFoodCard from '../../components/StreetFoodCard';
 import FoodCard from '../../components/FoodCard';
+import Spinner from '../../components/Spinner';
 import Footer from '../../components/Footer';
 import * as actions from './actionHomepage';
 
@@ -38,6 +39,21 @@ class Homepage extends Component {
   }
 
   render() {
+    let restos = <Spinner />;
+    if(this.props.restos) {
+      restos = this.props.restos.map(resto => <FoodCard
+          key={resto.id}
+          name={resto.name}
+          address={resto.address}
+          reviewer={resto.reviewer}
+          rating={resto.rating}
+          img={img}
+          isOpen={resto.isOpen}
+          clicked={this.cardClicked}
+         />
+      );  
+    }
+
     return (
       <div className="h-100 bg-wg-white">
         <Navbar 
@@ -49,14 +65,7 @@ class Homepage extends Component {
           <SearchField typed={(evt) => this.onSearch(evt)} />
         </div>
         <div className="flex flex-wrap justify-center">
-          <FoodCard clicked={this.cardClicked} img={img} />
-          <FoodCard img={img} />
-          <FoodCard img={img} />
-
-          <StreetFoodCard img={img}>Sayang</StreetFoodCard>
-          <StreetFoodCard img={img}>Jalan Kol A Syam</StreetFoodCard>
-          <StreetFoodCard img={img}>Ciseke Besar</StreetFoodCard>
-          <StreetFoodCard img={img}>Sukawening</StreetFoodCard>
+          {restos}
         </div>
         <Footer />
       </div>

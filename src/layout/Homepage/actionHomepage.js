@@ -30,7 +30,6 @@ export const fetchResto = () => {
     axios.get(server, {headers: {'Access-Control-Allow-Origin': '*'}})
       .then(res => {
         dispatch(fetchSuccess(res.data));
-        console.log(res.data);
       })
       .catch(error => dispatch(fetchFailed(error)))
   }

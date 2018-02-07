@@ -3,10 +3,10 @@ import { BrowserRouter as Router} from 'react-router-dom';
 import { Switch, Route } from 'react-router-dom' 
 
 import Auxi from './hoc/Auxi';
-import Homepage from './layout/Homepage';
-import SignIn from './layout/SignIn';
-import SignUp from './layout/SingUp';
-import HomeSignedIn from './layout/HomeSignedIn';
+import Homepage from './layout/Homepage/Homepage';
+import SignIn from './layout/SignIn/SignIn';
+import SignUp from './layout/SignUp/SignUp';
+import HomeSignedIn from './layout/HomeSignedIn/HomeSignedIn';
 import Details from './layout/Details/Details';
 
 class App extends Component {

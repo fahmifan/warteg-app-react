@@ -28,10 +28,10 @@ const commentSection = (props) => (
         src={ props.displayPic || noDisplayPic}
         alt="pic"
         className="relative left-0 pt1 pl1 di" />
-      <span className="f4 di pl1 pt1">John Doe</span>
+      <span className="f4 di pl1 pt1">{props.name}</span>
     </div>
     <CommentLine className="f6">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dolor enim, bibendum sed justo quis...
+      {props.comment}
     </CommentLine>
     <a className="relative ma0 f7 pl2 wg-blue">Read more</a>
   </CommentWrapper>

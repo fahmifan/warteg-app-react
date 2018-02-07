@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-import Navbar from '../components/Navbar';
-import SearchField from '../components/SearchField';
-import StreetFoodCard from '../components/StreetFoodCard';
-import FoodCard from '../components/FoodCard';
-import Footer from '../components/Footer';
+import Navbar from '../../components/Navbar';
+import SearchField from '../../components/SearchField';
+import StreetFoodCard from '../../components/StreetFoodCard';
+import FoodCard from '../../components/FoodCard';
+import Footer from '../../components/Footer';
+import * as actions from './actionHomepage';
 
-import img from '../assets/pics/nasi-goreng-kambing.jpg';
+import img from '../../assets/pics/nasi-goreng-kambing.jpg';
 
 class Homepage extends Component {
  
@@ -29,6 +31,10 @@ class Homepage extends Component {
   cardClicked = (props) => {
     console.log('card clicked');
     this.props.history.push('/details/hipotesa');
+  }
+
+  componentDidMount() {
+    this.props.fetchRestos();
   }
 
   render() {
@@ -58,4 +64,18 @@ class Homepage extends Component {
   }
 }
 
-export default Homepage;
+const mapStateToProps = (state) => {
+  return {
+    restos: state.homepage.restos,
+    loading: state.homepage.loading,
+    error: state.homepage.error
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchRestos: () => dispatch(actions.fetchResto())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Homepage);

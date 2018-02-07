@@ -15,20 +15,20 @@ const foodCard = (props) => {
       <TextWrapper>
         <p
           style={textShadow} 
-          className="absolute font-nunito-bold ma0 white f3 top-1 left-1">Hipotesa</p>
+          className="absolute font-nunito-bold ma0 white f3 top-1 left-1">{props.name || 'Resto'}</p>
         <p
           style={textShadow} 
-          className="absolute font-nunito ma0 white f4 pt4 mt3 left-1">Jln kol A Syam</p>
+          className="absolute font-nunito ma0 white f4 pt4 mt3 left-1">{props.address || 'Address'}</p>
         <img 
           src={commentIcon} alt="comment icon"
           className="absolute border-box left-1 bottom-0 pb1"/>
         <p
           style={textShadow} 
-          className="absolute font-nunito ma0 white f4 bottom-0 pb2 mb1 pl4 ml3">2 Ulasan</p>
+          className="absolute font-nunito ma0 white f4 bottom-0 pb2 mb1 pl4 ml3">{props.reviewer || '0'} Ulasan</p>
         <p 
-          className="absolute font-nunito ma0 white f4 pl3 right-1 bottom-0 pb2 mb1">Buka</p>
+          className="absolute font-nunito ma0 white f4 pl3 right-1 bottom-0 pb2 mb1">{props.isOpen ? 'Buka' : 'Tutup'}</p>
         <p 
-          className="absolute font-nunito ma0 white mr2 ml2 f4 right-1 top-1 pt1 pb2 mb2 ">4.3</p>
+          className="absolute font-nunito ma0 white mr2 ml2 f4 right-1 top-1 pt1 pb2 mb2 ">{props.rating || '0'}</p>
         <img 
           src={fiveStars} alt="stars" 
           className="absolute right-1 top-2 mt1 pt1"/>

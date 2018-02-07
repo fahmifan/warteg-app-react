@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import Auxi from '../hoc/Auxi';
-import NavBar from '../components/Navbar';
-import InputField from '../components/InputField';
-import Button from '../components/Button';
-import Footer from '../components/Footer';
+import Auxi from '../../hoc/Auxi';
+import NavBar from '../../components/Navbar';
+import InputField from '../../components/InputField';
+import Button from '../../components/Button';
+import Footer from '../../components/Footer';
 
 class SignUp extends Component {
   

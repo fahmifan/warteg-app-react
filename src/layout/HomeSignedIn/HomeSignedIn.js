@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
-import Auxi from '../hoc/Auxi';
-import NavbarSignedIn from '../components/NavbarSignedIn';
-import FoodCard from '../components/FoodCard';
-import Footer from '../components/Footer';
+import Auxi from '../../hoc/Auxi';
+import NavbarSignedIn from '../../components/NavbarSignedIn';
+import FoodCard from '../../components/FoodCard';
+import Footer from '../../components/Footer';
 
-import img from '../assets/pics/nasi-goreng-kambing.jpg';
+import img from '../../assets/pics/nasi-goreng-kambing.jpg';
 
 class HomeSignedIn extends Component {
   

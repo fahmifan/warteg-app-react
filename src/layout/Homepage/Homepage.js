@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import Navbar from '../../components/Navbar';
+import NavbarSignedIn from '../../components/NavbarSignedIn';
 import SearchField from '../../components/SearchField';
 import StreetFoodCard from '../../components/StreetFoodCard';
 import FoodCard from '../../components/FoodCard';
@@ -38,6 +39,10 @@ class Homepage extends Component {
     this.props.fetchRestos();
   }
 
+  dpClicked = () => {
+    console.log('dp clicked should be accordion')
+  }
+
   render() {
     let restos = <Spinner />;
     if(this.props.restos) {
@@ -56,10 +61,17 @@ class Homepage extends Component {
 
     return (
       <div className="h-100 bg-wg-white">
-        <Navbar 
-          isBack={this.state.isSignedPage} 
-          clicked={this.loginClicked} 
-          link={'/'}/>
+        {
+          this.props.isSigned ? 
+            <NavbarSignedIn
+              isBack={false} 
+              homeClicked={'/'} 
+              dpClicked={this.dpClicked} />
+          : <Navbar 
+              isBack={this.state.isSignedPage} 
+              clicked={this.loginClicked} 
+              link={'/'}/>
+        }
         <p className="f2 mt4 mb3 tc font-nunito-bold wg-black">Jatinangor</p>
         <div className="mb4">
           <SearchField typed={(evt) => this.onSearch(evt)} />
@@ -77,7 +89,8 @@ const mapStateToProps = (state) => {
   return {
     restos: state.homepage.restos,
     loading: state.homepage.loading,
-    error: state.homepage.error
+    error: state.homepage.error,
+    isSigned: state.homepage.isSigned
   }
 }
 

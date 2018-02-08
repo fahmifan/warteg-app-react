@@ -2,31 +2,31 @@ import * as actionTypes from '../../store/actions/actionTypes';
 
 const initState = {
   restos: null,
-  loading: false,
   error: null,
-  isSigned: false
+  loading: false
 }
 
 const reducer = (state = initState, action) => {
-  switch(action.type) {
-    case actionTypes.HOMEPAGE_FETCH_RESTO_START:
+  switch (action.type) {
+    case actionTypes.HOMEPAGESIGNED_FETCH_RESTO_START:
       return {
         ...state,
         loading: true
       }
-    case actionTypes.HOMEPAGE_FETCH_RESTO_SUCCESS:
+    case actionTypes.HOMEPAGESIGNED_FETCH_RESTO_SUCCESS:
       return {
         ...state,
         restos: action.restos,
         loading: false
       }
-    case actionTypes.HOMEPAGE_FETCH_RESTO_FAILED:
+    case actionTypes.HOMEPAGESIGNED_FETCH_RESTO_FAILED:
       return {
         ...state,
-        loading: false
+        loading: false,
+        error: action.error
       }
-    default: 
-      return state;
+    default:
+      return state
   }
 }
 

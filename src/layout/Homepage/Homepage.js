@@ -25,7 +25,6 @@ class Homepage extends Component {
   }
 
   onSearch = (evt) => {
-    console.log(evt.target.value);
     const searched = evt.target.value;
     this.setState({searched: searched});
   }
@@ -45,7 +44,27 @@ class Homepage extends Component {
 
   render() {
     let restos = <Spinner />;
-    if(this.props.restos) {
+    
+    if(this.state.searched !== '') {
+      const searched = this.state.searched;
+      
+      const foundRestos = this.props.restos.filter(resto => {
+        return resto.name.toLowerCase().indexOf(searched.toLocaleLowerCase()) !== -1 
+          || resto.address.toLowerCase().indexOf(searched.toLocaleLowerCase()) !== -1
+      });
+
+      restos = foundRestos.map(foundResto => <FoodCard 
+          name={foundResto.name}
+          address={foundResto.address}
+          reviewer={foundResto.reviewer}
+          rating={foundResto.rating}
+          img={img}
+          isOpen={foundResto.isOpen}
+          clicked={() => this.cardClicked(foundResto.id)}
+        />)
+    }
+
+    else if(this.props.restos) {
       restos = this.props.restos.map(resto => <FoodCard
           key={resto.id}
           name={resto.name}
@@ -70,7 +89,7 @@ class Homepage extends Component {
           : <Navbar 
               isBack={this.state.isSignedPage} 
               clicked={this.loginClicked} 
-              link={'/'}/>
+              link={'/'}/> 
         }
         <p className="f2 mt4 mb3 tc font-nunito-bold wg-black">Jatinangor</p>
         <div className="mb4">

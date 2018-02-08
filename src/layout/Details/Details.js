@@ -11,6 +11,7 @@ import CommentSection from './subComponents/CommentSection';
 import Image from '../../components/Image';
 import stars from '../../assets/icon/5-stars.svg';
 import Spinner from '../../components/Spinner';
+import Review from './subComponents/Review';
 import * as actionType from '../../store/actions/actionTypes';
 import * as actions from './actionDetails';
 
@@ -174,6 +175,9 @@ class Details extends Component {
           </SectionWrapper>
 
           <Maps img={maps} />
+
+          {/*Review*/}
+          <Review />
 
           {/*Ulasan*/}
           <SectionWrapper>

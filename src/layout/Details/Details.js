@@ -138,7 +138,7 @@ class Details extends Component {
       <Spinner /> 
       : <Auxi>
         {
-          this.state.isAuth ? 
+          this.props.isSignedIn ? 
           <NavbarSignedIn homeClicked="/"  dpClicked={this.dpClicked} />
           : <Navbar clicked={this.wartegAppClicked} isBack={true} link={'/'} />
         }

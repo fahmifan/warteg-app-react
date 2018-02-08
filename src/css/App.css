@@ -110,7 +110,7 @@ body {
 .Loader:after {
   width: 5.2em;
   height: 10.2em;
-  background: #fff;
+  background: #FBFBFB;
   border-radius: 0 10.2em 10.2em 0;
   top: -0.1em;
   left: 5.1em;

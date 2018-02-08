@@ -140,7 +140,7 @@ class Details extends Component {
         {
           this.props.isSignedIn ? 
           <NavbarSignedIn homeClicked="/"  dpClicked={this.dpClicked} />
-          : <Navbar clicked={this.wartegAppClicked} isBack={true} link={'/'} />
+          : <Navbar clicked={this.wartegAppClicked} isBack={false} link={'/'} />
         }
         <main>
           <FoodImageWrapper>

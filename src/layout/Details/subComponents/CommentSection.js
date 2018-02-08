@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import noDisplayPic from '../../assets/icon/noDisplayPic.svg';
+import noDisplayPic from '../../../assets/icon/noDisplayPic.svg';
 
 const CommentWrapper = styled.div`
   height: 8rem;

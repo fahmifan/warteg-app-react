@@ -65,7 +65,7 @@ class Review extends Component {
           onStarClick={this.onStarClick.bind(this)}
         />
         <Input 
-          placeholder="Give a review" 
+          placeholder="Beri ulasan" 
           className="bg-wg-white font-nunito wg-black"
           onChange={(e) => this.onInputChange(e)} />
         <SendButton

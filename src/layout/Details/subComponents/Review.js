@@ -23,11 +23,16 @@ const Input = styled.textarea`
   outline: none;
   border: none;
   border-bottom: 1px solid #eee;
+  transition: all 0.20s ease-in-out;
+  &:focus {
+    border-bottom: 1px solid rgba(81, 203, 238, 1);
+    box-shadow: 0 2px 2px -2px rgba(81, 203, 238, 1);
+  }
 `
 
 const StarRate = styled(StarRatingComponent)`
   label > i {
-    font-size: 2.5rem;
+    font-size: 2.5rem; 
   }
 `
 

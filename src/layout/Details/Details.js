@@ -139,7 +139,7 @@ class Details extends Component {
       : <Auxi>
         {
           this.state.isAuth ? 
-          <NavbarSignedIn homeClicked="/home"  dpClicked={this.dpClicked} />
+          <NavbarSignedIn homeClicked="/"  dpClicked={this.dpClicked} />
           : <Navbar clicked={this.wartegAppClicked} isBack={true} link={'/'} />
         }
         <main>

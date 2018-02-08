@@ -206,7 +206,10 @@ class Details extends Component {
 
 const mapStateToProps = state => {
   return {
-    resto: state.details.resto
+    resto: state.details.resto,
+    error: state.details.error,
+    loading: state.details.loading,
+    isSignedIn: state.details.isSignedIn
   }
 }
 

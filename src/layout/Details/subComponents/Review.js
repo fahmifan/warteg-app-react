@@ -7,7 +7,7 @@ const ReviewWrapper = styled.div`
   width: 16rem;
   position: relative;
   margin: auto;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   box-sizing: border-box;
   border-radius: 5px;
   /*background-color: #f2f2f2;*/

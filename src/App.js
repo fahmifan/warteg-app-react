@@ -3,10 +3,9 @@ import { BrowserRouter as Router} from 'react-router-dom';
 import { Switch, Route } from 'react-router-dom' 
 
 import Auxi from './hoc/Auxi';
-import Homepage from './layout/Homepage';
-import SignIn from './layout/SignIn';
-import SignUp from './layout/SingUp';
-import HomeSignedIn from './layout/HomeSignedIn';
+import Homepage from './layout/Homepage/Homepage';
+import SignIn from './layout/SignIn/SignIn';
+import SignUp from './layout/SignUp/SignUp';
 import Details from './layout/Details/Details';
 
 class App extends Component {
@@ -16,8 +15,7 @@ class App extends Component {
         <Switch>
           <Route path="/signin" component={SignIn} />
           <Route path="/signup" component={SignUp} />
-          <Route path="/home" component={HomeSignedIn} />
-          <Route path="/details" component={Details} />
+          <Route path="/restos/:id" component={Details} />
           <Route path="/" component={Homepage} />
         </Switch>
       </Router>  

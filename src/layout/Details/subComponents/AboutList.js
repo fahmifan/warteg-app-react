@@ -1,6 +1,6 @@
 import React from 'react';
 
-import checkList from '../../assets/icon/checklist-circle.svg';
+import checkList from '../../../assets/icon/checklist-circle.svg';
 const AboutDesc = "relative flex items-center pt2";
 
 const aboutList = (props) => (

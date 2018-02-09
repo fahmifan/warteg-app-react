@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import { connect } from 'react-redux';
 
 import Auxi from '../../hoc/Auxi';
 import NavbarSignedIn from '../../components/NavbarSignedIn';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
-import AboutList from './AboutList';
-import CommentSection from './CommentSection';
+import AboutList from './subComponents/AboutList';
+import CommentSection from './subComponents/CommentSection';
 import Image from '../../components/Image';
 import stars from '../../assets/icon/5-stars.svg';
+import Spinner from '../../components/Spinner';
+import Review from './subComponents/Review';
+import * as actionType from '../../store/actions/actionTypes';
+import * as actions from './actionDetails';
 
 import img from '../../assets/pics/nasi-goreng-kambing.jpg';
 import maps from '../../assets/pics/map.png';
@@ -62,6 +67,11 @@ class Details extends Component {
 
   state = {
     isAuth: true
+  }
+
+  componentDidMount() {
+    const id = this.props.match.params.id;
+    this.props.fetchRestoDetails(id);
   }
 
   wartegAppClicked = () => {
@@ -121,12 +131,16 @@ class Details extends Component {
       </MenuItems>
     );
 
+    const resto = this.props.resto;
+
     return (
-      <Auxi>
+      !this.props.resto ?
+      <Spinner /> 
+      : <Auxi>
         {
-          this.state.isAuth ? 
-          <NavbarSignedIn homeClicked="/home"  dpClicked={this.dpClicked} />
-          : <Navbar clicked={this.wartegAppClicked} isBack={true} link={'/'} />
+          this.props.isSignedIn ? 
+          <NavbarSignedIn homeClicked="/"  dpClicked={this.dpClicked} />
+          : <Navbar clicked={this.wartegAppClicked} isBack={false} link={'/'} />
         }
         <main>
           <FoodImageWrapper>
@@ -134,9 +148,9 @@ class Details extends Component {
           </FoodImageWrapper>
 
           <div className="relative db h3 w-100 mt2 pa2">
-            <span className="absolute left-1 top-1 font-nunito-bold f3 wg-black">Hipotesa</span>
-            <span className="absolute left-1 top-2 font-nunito mt3 wg-black">Jln Kol A.Syam</span>
-            <span className="absolute right-1 top-1 mr1 f3 wg-yellow font-nunito-bold">4.3</span>
+            <span className="absolute left-1 top-1 font-nunito-bold f3 wg-black">{resto.name}</span>
+            <span className="absolute left-1 top-2 font-nunito mt3 wg-black">{resto.address}</span>
+            <span className="absolute right-1 top-1 mr1 f3 wg-yellow font-nunito-bold">{resto.rating}</span>
             <span className="absolute top-2 right-1 mt1"><img src={stars} alt="rating" /></span>
           </div>
 
@@ -153,22 +167,34 @@ class Details extends Component {
           <SectionWrapper>
             <span className={SectionHeading}>About</span>
             <section className={SubSection}>
-              <AboutList>0822 xxxx xxxx</AboutList>
-              <AboutList>Delivery</AboutList>
-              <AboutList>24 Jam</AboutList>
-              <AboutList>Indoor / Outdoor</AboutList>
+              <AboutList>{resto.phone}</AboutList>
+              <AboutList>{resto.delivery ? 'Delivery' : 'No Delivery'}</AboutList>
+              <AboutList>{`Open ${resto.openTime} - ${resto.closeTime}`}</AboutList>
+              {resto.others && <AboutList>{resto.others}</AboutList>}
             </section>
           </SectionWrapper>
 
           <Maps img={maps} />
 
+          {/*Review*/}
+          <Review />
+
           {/*Ulasan*/}
           <SectionWrapper>
             <span className={SectionHeading}>Ulasan</span>
             <section className={SubSection}>
-              <CommentSection />
-              <CommentSection />
-              <CommentSection />
+            {
+              resto.comments &&
+                resto.comments.map(comment => {
+                  return (
+                    <CommentSection 
+                      displayPic={comment.avatar}
+                      name={comment.name}
+                      comment={comment.comment} />
+                  )
+                })
+              
+            }
             </section>
           </SectionWrapper>
         </main>
@@ -178,4 +204,19 @@ class Details extends Component {
   }
 }
 
-export default Details;
+const mapStateToProps = state => {
+  return {
+    resto: state.details.resto,
+    error: state.details.error,
+    loading: state.details.loading,
+    isSignedIn: state.details.isSignedIn
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchRestoDetails: (id) => dispatch(actions.fetchResto(id))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Details);

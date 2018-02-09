@@ -1,14 +1,20 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'; 
 
-import Auxi from '../hoc/Auxi';
-import NavbarSignedIn from '../components/NavbarSignedIn';
-import FoodCard from '../components/FoodCard';
-import Footer from '../components/Footer';
+import Auxi from '../../hoc/Auxi';
+import NavbarSignedIn from '../../components/NavbarSignedIn';
+import FoodCard from '../../components/FoodCard';
+import Footer from '../../components/Footer';
+import * as actions from './actionHomeSignedIn';
 
-import img from '../assets/pics/nasi-goreng-kambing.jpg';
+import img from '../../assets/pics/nasi-goreng-kambing.jpg';
 
 class HomeSignedIn extends Component {
   
+  componentDidMount() {
+    this.props.fetchingRestos()
+  }
+
   foodCardClicked = (path) => {
     this.props.history.push(`/details${`/${path}`}`)
   }
@@ -34,4 +40,16 @@ class HomeSignedIn extends Component {
   }
 }
 
-export default HomeSignedIn;
+const mapStateToProps = (state) => {
+  return {
+    restos: state.homesignedin.restos
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchingRestos: () => dispatch(actions.fetching())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomeSignedIn);

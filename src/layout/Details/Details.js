@@ -12,6 +12,7 @@ import Image from '../../components/Image';
 import stars from '../../assets/icon/5-stars.svg';
 import Spinner from '../../components/Spinner';
 import Review from './subComponents/Review';
+import GoogleMaps from './subComponents/Maps';
 import * as actionType from '../../store/actions/actionTypes';
 import * as actions from './actionDetails';
 
@@ -66,12 +67,43 @@ const SubSection = "relative bt b--black-20 w-90 mt3 ph3 pv3 center font-nunito 
 class Details extends Component {
 
   state = {
-    isAuth: true
+    isAuth: true,
+    // location: {
+    //   lat: null,
+    //   lng: null
+    // }
   }
 
   componentDidMount() {
     const id = this.props.match.params.id;
     this.props.fetchRestoDetails(id);
+    // this.getGeolocation();
+  }
+
+  getGeolocation = () => {
+
+    const options = {
+      enableHighAccuracy: true,
+      timeout: 5000,
+      maximumAge: 0
+    };
+
+    const success = (pos) => {
+      const {latitude, longitude} = pos.coords;
+      this.setState({
+        location: {
+          lat: latitude,
+          lng: longitude
+        }
+      })
+    };
+
+    function error(err) {
+      console.warn(`ERROR(${err.code}): ${err.message}`);
+    };
+    
+    const geolocation = navigator.geolocation.getCurrentPosition(success, error, options);
+    return geolocation;
   }
 
   wartegAppClicked = () => {
@@ -132,7 +164,6 @@ class Details extends Component {
     );
 
     const resto = this.props.resto;
-
     return (
       !this.props.resto ?
       <Spinner /> 
@@ -174,7 +205,15 @@ class Details extends Component {
             </section>
           </SectionWrapper>
 
-          <Maps img={maps} />
+          {/*<Maps img={maps} />*/}
+          <GoogleMaps 
+            isMarkerShown
+            googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyCQ01ecqDWTYQnMlfK-hMJQ6_twhg8a3dg"
+            loadingElement={<div style={{ height: `100%` }} />}
+            containerElement={<div style={{ height: `16rem` }} />}
+            mapElement={<div style={{ height: `100%` }} />}
+            currCenter={this.props.resto.location}
+           />
 
           {/*Review*/}
           <Review />

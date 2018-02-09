@@ -13,11 +13,9 @@ import stars from '../../assets/icon/5-stars.svg';
 import Spinner from '../../components/Spinner';
 import Review from './subComponents/Review';
 import GoogleMaps from './subComponents/Maps';
-import * as actionType from '../../store/actions/actionTypes';
 import * as actions from './actionDetails';
 
 import img from '../../assets/pics/nasi-goreng-kambing.jpg';
-import maps from '../../assets/pics/map.png';
 
 const FoodImageWrapper = styled.div`
   weight: 100%;
@@ -49,12 +47,6 @@ const MenuItems = styled.table`
       padding-top: 0.5rem;
     }
   }
-`
-
-const Maps = Image.extend`
-  height: 16rem;
-  border-color: unset;
-  border-radius: 0;
 `
 
 const SectionWrapper = styled.section`
@@ -205,7 +197,6 @@ class Details extends Component {
             </section>
           </SectionWrapper>
 
-          {/*<Maps img={maps} />*/}
           <GoogleMaps 
             isMarkerShown
             googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyCQ01ecqDWTYQnMlfK-hMJQ6_twhg8a3dg"

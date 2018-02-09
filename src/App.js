@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router} from 'react-router-dom';
 import { Switch, Route } from 'react-router-dom' 
 
-import Auxi from './hoc/Auxi';
 import Homepage from './layout/Homepage/Homepage';
 import SignIn from './layout/SignIn/SignIn';
 import SignUp from './layout/SignUp/SignUp';

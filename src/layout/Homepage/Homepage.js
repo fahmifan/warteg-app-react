@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import Navbar from '../../components/Navbar';
 import NavbarSignedIn from '../../components/NavbarSignedIn';
 import SearchField from '../../components/SearchField';
-import StreetFoodCard from '../../components/StreetFoodCard';
 import FoodCard from '../../components/FoodCard';
 import Spinner from '../../components/Spinner';
 import Footer from '../../components/Footer';

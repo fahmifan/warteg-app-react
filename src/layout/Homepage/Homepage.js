@@ -15,7 +15,8 @@ class Homepage extends Component {
  
   state = {
     isSignedPage: false,
-    searched: ''
+    searched: '',
+    isAccordionShowed: false
   }
 
   loginClicked = () => {
@@ -36,7 +37,8 @@ class Homepage extends Component {
   }
 
   dpClicked = () => {
-    console.log('dp clicked should be accordion')
+    console.log('dp clicked should be accordion');
+    this.setState({isAccordionShowed: !this.state.isAccordionShowed})
   }
 
   render() {
@@ -82,7 +84,8 @@ class Homepage extends Component {
             <NavbarSignedIn
               isBack={false} 
               homeClicked={'/'} 
-              dpClicked={this.dpClicked} />
+              dpClicked={this.dpClicked} 
+              accordShowed={this.state.isAccordionShowed}/>
           : <Navbar 
               isBack={this.state.isSignedPage} 
               clicked={this.loginClicked} 

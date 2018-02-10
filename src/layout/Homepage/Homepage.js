@@ -28,7 +28,6 @@ class Homepage extends Component {
   }
 
   cardClicked = (id) => {
-    console.log('card clicked');
     this.props.history.push(`/restos/${id}`);
   }
 

@@ -28,11 +28,9 @@ export const fetchResto = (id) => {
     axios.get(server + `/${id}`, {"headers": {"Access-Control-Allow-Origin": "*"}})
       .then(res => {
         dispatch(fetchRestoSuccess(res.data));
-        console.log('Fetch Resto Success', res.data)
       })
       .catch(error => {
         dispatch(fetchRestoFail(error))
-        console.log('Fetch Resto Error', error)
       })
   }
 }

@@ -7,6 +7,7 @@ import NavBar from '../../components/Navbar';
 import InputField from '../../components/InputField';
 import Button from '../../components/Button';
 import Footer from '../../components/Footer';
+import axios from '../../axios';
 
 const Form = styled.form`
   margin: auto;
@@ -22,7 +23,7 @@ const Form = styled.form`
 class SignUp extends Component {
   
   state = {
-    res: '',
+    res: null,
     invalid: false,
     displayErrors: false,
     form: {
@@ -48,12 +49,12 @@ class SignUp extends Component {
     },
   };
 
-  stringifyFormData = (fd) => {
+  toJson = (fd) => {
     const data = {};
     for (let key of fd.keys()) {
       data[key] = fd.get(key);
     }
-    return JSON.stringify(data, null, 2);
+    return data;
   }
 
   handleSubmit(event) {
@@ -63,7 +64,6 @@ class SignUp extends Component {
         invalid: true,
         displayErrors: true,
       });
-      console.log("error");
       return;
     }
     const form = event.target;
@@ -72,18 +72,33 @@ class SignUp extends Component {
     for (let name of data.keys()) {
       const input = form.elements[name];
       const parserName = input.dataset.parse;
-      console.log('parser name is', parserName);
       if (parserName) {
         const parsedValue = this.inputParsers[parserName](data.get(name))
         data.set(name, parsedValue);
       }
     }
-    console.log(data);
     this.setState({
-    	res: this.stringifyFormData(data),
+    	res: this.toJson(data),
       invalid: false,
       displayErrors: false,
-    });
+    })
+
+    const newUsers = this.state.res;
+    axios({
+      method: 'post',
+      url: '/users',
+      data: newUsers,
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+      }
+    })
+    .then(res => {
+      this.props.history.push('/');
+    })
+    .catch(error => {
+      console.log(error); 
+    })
   }
 
   backArrowClicked = () => {

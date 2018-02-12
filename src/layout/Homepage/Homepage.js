@@ -32,6 +32,12 @@ class Homepage extends Component {
     this.props.history.push(`/restos/${id}`);
   }
 
+  ucFirst = (words) => {
+    return words.split(' ')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ')
+  }
+
   componentDidMount() {
     this.props.fetchRestos();
   }

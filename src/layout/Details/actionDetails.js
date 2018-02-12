@@ -1,7 +1,5 @@
 import * as actionTypes from '../../store/actions/actionTypes';
-import axios from 'axios';
-
-const server = "http://localhost:3001/restos";
+import axios from '../../axios';
 
 export const fetchRestoStart = () => {
   return {
@@ -25,7 +23,7 @@ export const fetchRestoFail = (error) => {
 
 export const fetchResto = (id) => {
   return dispatch => {
-    axios.get(server + `/${id}`, {"headers": {"Access-Control-Allow-Origin": "*"}})
+    axios.get(`/restaurants/${id}`, {"headers": {"Access-Control-Allow-Origin": "*"}})
       .then(res => {
         dispatch(fetchRestoSuccess(res.data));
       })

@@ -55,12 +55,12 @@ class Homepage extends Component {
       
       const foundRestos = this.props.restos.filter(resto => {
         return resto.name.toLowerCase().indexOf(searched.toLocaleLowerCase()) !== -1 
-          || resto.address.toLowerCase().indexOf(searched.toLocaleLowerCase()) !== -1
+          || resto.road_name.toLowerCase().indexOf(searched.toLocaleLowerCase()) !== -1
       });
 
       restos = foundRestos.map(foundResto => <FoodCard 
-          name={foundResto.name}
-          address={foundResto.address}
+          name={this.ucFirst(foundResto.name)}
+          address={this.ucFirst(foundResto.road_name)}
           reviewer={foundResto.reviewer}
           rating={foundResto.rating}
           img={img}
@@ -70,16 +70,22 @@ class Homepage extends Component {
     }
 
     else if(this.props.restos) {
-      restos = this.props.restos.map(resto => <FoodCard
+      restos = this.props.restos.map(resto => {
+        const time = new Date();
+        const open = (resto.opening_hour - time.getHours()) > 0;
+        const close = (resto.closing_hour - time.getHours()) > 0;
+        
+        return <FoodCard
           key={resto.id}
-          name={resto.name}
-          address={resto.address}
+          name={this.ucFirst(resto.name)}
+          address={this.ucFirst(resto.road_name)}
           reviewer={resto.reviewer}
-          rating={resto.rating}
+          rating={resto.avg_rating}
           img={img}
-          isOpen={resto.isOpen}
+          isOpen={open || close}
           clicked={() => this.cardClicked(resto.id)}
          />
+        }
       );  
     }
 

@@ -108,54 +108,13 @@ class Details extends Component {
     console.log('dp clicked should be accordion')
   }
 
+  ucFirst = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
   render() {
-    const Makanan = (
-      <MenuItems>
-        <thead>
-          <th>Makanan</th>
-          <th>Harga</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Nasi Goreng</td>
-            <td>10.000</td>                  
-          </tr>
-          <tr>
-            <td>Indomie</td>
-            <td>5.000</td>
-          </tr>
-          <tr>
-            <td>Ayam Rica-rica</td>
-            <td>8.000</td>
-          </tr>
-        </tbody>
-      </MenuItems>      
-    );
-
-    const Minuman = (
-      <MenuItems className="mt3 mb2">
-        <thead>
-          <th>Minuman</th>
-          <th>Harga</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Josu</td>
-            <td>8.000</td>                  
-          </tr>
-          <tr>
-            <td>Milo</td>
-            <td>5.000</td>
-          </tr>
-          <tr>
-            <td>Kopi</td>
-            <td>2.000</td>
-          </tr>
-        </tbody>
-      </MenuItems>
-    );
-
     const resto = this.props.resto;
+
     return (
       !this.props.resto ?
       <Spinner /> 
@@ -171,9 +130,9 @@ class Details extends Component {
           </FoodImageWrapper>
 
           <div className="relative db h3 w-100 mt2 pa2">
-            <span className="absolute left-1 top-1 font-nunito-bold f3 wg-black">{resto.name}</span>
-            <span className="absolute left-1 top-2 font-nunito mt3 wg-black">{resto.address}</span>
-            <span className="absolute right-1 top-1 mr1 f3 wg-yellow font-nunito-bold">{resto.rating}</span>
+            <span className="absolute left-1 top-1 font-nunito-bold f3 wg-black">{this.ucFirst(resto.name)} </span>
+            <span className="absolute left-1 top-2 font-nunito mt3 wg-black">{resto.road_name}</span>
+            <span className="absolute right-1 top-1 mr1 f3 wg-yellow font-nunito-bold">{resto.avg_rating.toFixed(1)}</span>
             <span className="absolute top-2 right-1 mt1"><img src={stars} alt="rating" /></span>
           </div>
 
@@ -181,8 +140,43 @@ class Details extends Component {
           <SectionWrapper className="relative db w-100 mt2">
             <span className={SectionHeading}>Menu</span>
             <section className={SubSection}>
-              {Makanan}
-              {Minuman}
+              <MenuItems>
+                <thead>
+                  <th>Makanan</th>
+                  <th>Harga</th>
+                </thead>
+                <tbody>
+                  {
+                    resto.menus
+                    .filter(menu => menu.type === 'makanan')
+                    .map(menu => {
+                      return <tr>
+                        <td>{menu.name}</td>
+                        <td>{menu.price}</td>
+                        </tr> 
+                    })          
+                  }
+                </tbody>
+              </MenuItems>      
+            
+              <MenuItems className="mt3 mb2">
+                <thead>
+                  <th>Minuman</th>
+                  <th>Harga</th>
+                </thead>
+                <tbody>
+                {
+                  resto.menus
+                  .filter(menu => menu.type === 'minuman')
+                  .map(menu => {
+                    return <tr>
+                      <td>{menu.name}</td>
+                      <td>{menu.price}</td>
+                      </tr> 
+                  })          
+                }            
+                </tbody>
+              </MenuItems>
             </section>
           </SectionWrapper>
 
@@ -192,7 +186,7 @@ class Details extends Component {
             <section className={SubSection}>
               <AboutList>{resto.phone}</AboutList>
               <AboutList>{resto.delivery ? 'Delivery' : 'No Delivery'}</AboutList>
-              <AboutList>{`Open ${resto.openTime} - ${resto.closeTime}`}</AboutList>
+              <AboutList>{`Open ${resto.opening_hour} - ${resto.closing_hour}`}</AboutList>
               {resto.others && <AboutList>{resto.others}</AboutList>}
             </section>
           </SectionWrapper>
@@ -214,13 +208,13 @@ class Details extends Component {
             <span className={SectionHeading}>Ulasan</span>
             <section className={SubSection}>
             {
-              resto.comments &&
-                resto.comments.map(comment => {
+              resto.reviews &&
+                resto.reviews.map(review => {
                   return (
                     <CommentSection 
-                      displayPic={comment.avatar}
-                      name={comment.name}
-                      comment={comment.comment} />
+                      displayPic={review.avatar}
+                      name={review.name}
+                      comment={review.review} />
                   )
                 })
               

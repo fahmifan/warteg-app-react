@@ -124,25 +124,3 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Review);
-
-// const reviewCompos = props => {
-//   return (
-//     <ReviewWrapper className="flex flex-wrap justify-center font-nunito">
-//       <StarRate 
-//         name="rate1" 
-//         starCount={5}
-//         value={props.score}
-//         emptyStarColor='#eee'
-//         onStarClick={props.clicked}
-//       />
-//       <Input 
-//         placeholder="Beri ulasan" 
-//         className="bg-wg-white font-nunito wg-black"
-//         onChange={props.typed} />
-//       <SendButton
-//         className="bg-wg-white font-nunito-bold wg-blue dim pointer"
-//         onClick={props.submitReview}
-//       >Kirim</SendButton>
-//     </ReviewWrapper>
-//   );
-// }

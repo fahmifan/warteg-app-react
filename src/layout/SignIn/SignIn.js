@@ -8,6 +8,12 @@ import Footer from '../../components/Footer';
 
 class SignIn extends Component {
   
+  state = {
+    cred: null,
+    invalid: false,
+    displayErrors: false,
+  }
+
   backArrowClicked = () => {
     this.props.history.push('/')
   }

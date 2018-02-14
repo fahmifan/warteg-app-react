@@ -22,7 +22,7 @@ const CommentLine = styled.p`
 `
 
 const commentSection = (props) => (
-  <CommentWrapper className="shadow-4 mt3">
+  <CommentWrapper className="shadow-4 mt3" key={props.key}>
     <div className="flex items-center">
       <img 
         src={ props.displayPic || noDisplayPic}

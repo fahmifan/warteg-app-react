@@ -51,7 +51,8 @@ const SendButton = styled.button`
 class Review extends Component {
   state = {
     score: 0,
-    review: ''
+    review: '',
+    inputEvent: null
   }
  
   onInputChange = (event) => {
@@ -78,7 +79,7 @@ class Review extends Component {
       data: review 
     })
     .then(res => {
-      console.log('Successfully submit review')
+      this.setState({score:0, review: null})
       this.props.updateResto(this.props.id_res);
     })
     .catch(error => {
@@ -100,7 +101,8 @@ class Review extends Component {
         <Input 
           placeholder="Beri ulasan" 
           className="bg-wg-white font-nunito wg-black"
-          onChange={(e) => this.onInputChange(e)} />
+          onChange={(e) => this.onInputChange(e)}
+          value={this.state.review || ''} />
         <SendButton
           className="bg-wg-white font-nunito-bold wg-blue dim pointer"
           onClick={this.submitReview}

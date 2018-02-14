@@ -117,3 +117,8 @@ const mapStateToProps = state => {
   }
 }
 
+const mapDispatchToProps = dispatch => {
+  return {
+    updateResto: (id) => dispatch(actions.fetchResto(id))
+  }
+}

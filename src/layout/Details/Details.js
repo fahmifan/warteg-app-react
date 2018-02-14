@@ -201,7 +201,10 @@ class Details extends Component {
            />
 
           {/*Review*/}
-          <Review />
+          {
+            this.props.isLogedIn && <Review 
+              id_res={this.props.match.params.id} />
+          }          
 
           {/*Ulasan*/}
           <SectionWrapper>

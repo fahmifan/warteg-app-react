@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import Auxi from '../../hoc/Auxi';
 import NavBar from '../../components/Navbar';
 import InputField from '../../components/InputField';
 import Button from '../../components/Button';
 import Footer from '../../components/Footer';
+import * as actions from '../../store/actions/auth';
 
 class SignIn extends Component {
   

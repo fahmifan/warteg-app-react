@@ -80,6 +80,8 @@ class SignIn extends Component {
       invalid: false,
       displayErrors: false,
     });
+
+    this.props.onLogin(this.toJson(data));
   }
 
   render() {

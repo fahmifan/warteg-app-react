@@ -7,11 +7,12 @@ export const loginStart = () => {
   }
 }
 
-export const loginSuccess = ({token, email}) => {
+export const loginSuccess = ({token, email, id}) => {
   return {
     type: actionTypes.LOGIN_SUCCESS,
     token: token,
-    email: email
+    email: email,
+    id: id
   }
 }
 
@@ -22,15 +23,16 @@ export const loginFailed = (error) => {
   }
 }
 
-export const login = (cred) => {
+export const login = ({id, email, password}) => {
   return dispatch => {
     dispatch(loginStart());
     axios({
       url: '/auth',
       method: 'post',
       data: {
-        email: cred.email,
-        password: cred.password
+        id: id,
+        email: email,
+        password: password
       }
     })
     .then(res => {

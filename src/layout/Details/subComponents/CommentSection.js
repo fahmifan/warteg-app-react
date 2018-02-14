@@ -29,6 +29,7 @@ const commentSection = (props) => (
         alt="pic"
         className="relative left-0 pt1 pl1 di" />
       <span className="f4 di pl1 pt1">{props.name}</span>
+      <span className="right-0 f6 absolute right-1 mt1">{props.date}</span>
     </div>
     <CommentLine className="f6">
       {props.comment}

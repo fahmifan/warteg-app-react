@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 import noDisplayPic from '../assets/icon/noDisplayPic.svg';
-import Auxi from '../hoc/Auxi';
 
 const Logout = styled.button`
   display: block;

@@ -60,16 +60,12 @@ class Details extends Component {
 
   state = {
     isAuth: true,
-    // location: {
-    //   lat: null,
-    //   lng: null
-    // }
+    isAccordionShowed: false
   }
 
   componentDidMount() {
     const id = this.props.match.params.id;
     this.props.fetchRestoDetails(id);
-    // this.getGeolocation();
   }
 
   getGeolocation = () => {
@@ -105,7 +101,7 @@ class Details extends Component {
   }
 
   dpClicked = () => {
-    console.log('dp clicked should be accordion')
+    this.setState({isAccordionShowed: !this.state.isAccordionShowed})
   }
 
   ucFirst = (string) => {
@@ -121,8 +117,13 @@ class Details extends Component {
       : <Auxi>
         {
           this.props.isLogedIn ? 
-          <NavbarSignedIn homeClicked="/"  dpClicked={this.dpClicked} />
-          : <Navbar clicked={this.wartegAppClicked} isBack={false} link={'/'} />
+          <NavbarSignedIn
+            homeClicked="/"  
+            dpClicked={this.dpClicked}
+            accordShowed={this.state.isAccordionShowed} />
+          : <Navbar 
+              clicked={this.wartegAppClicked} 
+              isBack={false} link={'/'} />
         }
         <main>
           <FoodImageWrapper>

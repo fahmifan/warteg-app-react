@@ -127,5 +127,19 @@ class SignIn extends Component {
   }
 }
 
-export default SignIn;
+const mapStateToProps = state => {
+  return {
+    loading: state.auth.loading,
+    error: state.auth.error,
+    isLogedIn: state.auth.isLogedIn
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onLogin: (cred) => dispatch(actions.login(cred))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn);
 

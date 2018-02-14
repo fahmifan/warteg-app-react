@@ -103,6 +103,7 @@ class Review extends Component {
           onChange={(e) => this.onInputChange(e)} />
         <SendButton
           className="bg-wg-white font-nunito-bold wg-blue dim pointer"
+          onClick={this.submitReview}
         >Kirim</SendButton>
       </ReviewWrapper>
     );    

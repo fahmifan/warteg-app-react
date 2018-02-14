@@ -142,15 +142,17 @@ class Details extends Component {
             <section className={SubSection}>
               <MenuItems>
                 <thead>
+                  <tr>
                   <th>Makanan</th>
                   <th>Harga</th>
+                  </tr>
                 </thead>
                 <tbody>
                   {
                     resto.menus
                     .filter(menu => menu.type === 'makanan')
                     .map(menu => {
-                      return <tr>
+                      return <tr key={menu.id}>
                         <td>{menu.name}</td>
                         <td>{menu.price}</td>
                         </tr> 
@@ -161,15 +163,17 @@ class Details extends Component {
             
               <MenuItems className="mt3 mb2">
                 <thead>
+                  <tr>
                   <th>Minuman</th>
                   <th>Harga</th>
+                  </tr>
                 </thead>
                 <tbody>
                 {
                   resto.menus
                   .filter(menu => menu.type === 'minuman')
                   .map(menu => {
-                    return <tr>
+                    return <tr key={menu.id}>
                       <td>{menu.name}</td>
                       <td>{menu.price}</td>
                       </tr> 

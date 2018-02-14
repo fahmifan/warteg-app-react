@@ -15,7 +15,7 @@ const CommentWrapper = styled.div`
 const CommentLine = styled.p`
   position: relative;
   margin: 0;
-  padding-top: .25rem;
+  padding-top: .5rem;
   padding-bottom: .25rem;
   padding-left: .5rem;
   padding-right: .5rem;

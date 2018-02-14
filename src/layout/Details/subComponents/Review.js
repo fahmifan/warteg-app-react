@@ -3,6 +3,9 @@ import { connect } from 'react-redux';
 import styled from 'styled-components';
 import StarRatingComponent from 'react-star-rating-component';
 
+import axios from '../../../axios';
+import * as actions from '../actionDetails';
+
 const ReviewWrapper = styled.div`
   height: 8rem;
   width: 16rem;

@@ -9,12 +9,14 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import homepageReducer from './layout/Homepage/reducerHomepage';
 import detailsreducer from './layout/Details/reducerDetails';
+import authReducer from './store/reducers/authReducer';
 
 const composeEnhancers =  process.env.NODE_ENV === 'development' ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : null || compose; 
 
 const rootReducer = combineReducers({
   homepage: homepageReducer,
-  details: detailsreducer
+  details: detailsreducer,
+  auth: authReducer
 });
 
 const store = createStore(

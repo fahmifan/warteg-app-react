@@ -120,7 +120,7 @@ class Details extends Component {
       <Spinner /> 
       : <Auxi>
         {
-          this.props.isSignedIn ? 
+          this.props.isLogedIn ? 
           <NavbarSignedIn homeClicked="/"  dpClicked={this.dpClicked} />
           : <Navbar clicked={this.wartegAppClicked} isBack={false} link={'/'} />
         }

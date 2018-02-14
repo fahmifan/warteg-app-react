@@ -84,6 +84,18 @@ class SignIn extends Component {
     this.props.onLogin(this.toJson(data));
   }
 
+  componentDidUpdate() {
+    if(this.props.isLogedIn) {
+      this.props.history.push('/');
+    }
+  }
+
+  componentDidMount() {
+    if(this.props.isLogedIn) {
+      this.props.history.push('/');
+    }
+  }
+
   render() {
     return (
       <Auxi>

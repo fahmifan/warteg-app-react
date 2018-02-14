@@ -34,7 +34,9 @@ const commentSection = (props) => (
     <CommentLine className="f6">
       {props.comment}
     </CommentLine>
-    <a className="relative ma0 f7 pl2 wg-blue">Read more</a>
+    {
+      // <a className="relative ma0 f7 pl2 wg-blue">Read more</a>
+    }
   </CommentWrapper>
 );
 

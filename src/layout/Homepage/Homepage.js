@@ -92,7 +92,7 @@ class Homepage extends Component {
     return (
       <div className="h-100 bg-wg-white">
         {
-          this.props.isSigned ? 
+          this.props.isLogedIn ? 
             <NavbarSignedIn
               isBack={false} 
               homeClicked={'/'} 
@@ -121,7 +121,7 @@ const mapStateToProps = (state) => {
     restos: state.homepage.restos,
     loading: state.homepage.loading,
     error: state.homepage.error,
-    isSigned: state.homepage.isSigned
+    isLogedIn: state.auth.isLogedIn
   }
 }
 

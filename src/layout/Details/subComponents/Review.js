@@ -61,6 +61,29 @@ class Review extends Component {
   onStarClick = (nextValue, prevValue, name) => {
     this.setState({score: nextValue});
   }
+
+  submitReview = () => {
+    
+    const review = {
+      id_res: this.props.id_res,
+      id_user: this.props.id_user,
+      score: this.state.score,
+      review: this.state.review,
+      date: new Date()
+    }
+
+    axios({
+      method: 'post',
+      url: `/reviews?key=${this.props.token}`,
+      data: review 
+    })
+    .then(res => {
+      console.log('Successfully submit review')
+      this.props.updateResto(this.props.id_res);
+    })
+    .catch(error => {
+      console.log(error);
+    })
   }
 
   render() {

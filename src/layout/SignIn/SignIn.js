@@ -36,12 +36,12 @@ class SignIn extends Component {
     },
   };
 
-  stringifyFormData = (fd) => {
+  toJson = (fd) => {
     const data = {};
     for (let key of fd.keys()) {
       data[key] = fd.get(key);
     }
-    return JSON.stringify(data, null, 2);
+    return data;
   }
 
   handleSubmit(event) {
@@ -68,7 +68,7 @@ class SignIn extends Component {
     }
     console.log(data);
     this.setState({
-    	res: this.stringifyFormData(data),
+    	cred: this.toJson(data),
       invalid: false,
       displayErrors: false,
     });

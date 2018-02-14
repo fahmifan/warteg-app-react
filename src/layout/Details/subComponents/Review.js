@@ -59,7 +59,8 @@ class Review extends Component {
   }
 
   onStarClick = (nextValue, prevValue, name) => {
-    this.setState({rating: nextValue});
+    this.setState({score: nextValue});
+  }
   }
 
   render() {

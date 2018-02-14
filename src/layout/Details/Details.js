@@ -217,7 +217,8 @@ class Details extends Component {
                     <CommentSection 
                       displayPic={review.avatar}
                       name={review.name}
-                      comment={review.review} />
+                      comment={review.review} 
+                      date={new Date(review.updated_at).toLocaleDateString()} />
                   )
                 })
               

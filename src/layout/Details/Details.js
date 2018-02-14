@@ -219,6 +219,7 @@ class Details extends Component {
                 resto.reviews.map(review => {
                   return (
                     <CommentSection 
+                      key={review.id}
                       displayPic={review.avatar}
                       name={review.name}
                       comment={review.review} 

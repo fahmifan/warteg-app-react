@@ -144,8 +144,8 @@ class Details extends Component {
               <MenuItems>
                 <thead>
                   <tr>
-                  <th>Makanan</th>
-                  <th>Harga</th>
+                    <th>Makanan</th>
+                    <th>Harga</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -165,8 +165,8 @@ class Details extends Component {
               <MenuItems className="mt3 mb2">
                 <thead>
                   <tr>
-                  <th>Minuman</th>
-                  <th>Harga</th>
+                    <th>Minuman</th>
+                    <th>Harga</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -189,8 +189,8 @@ class Details extends Component {
           <SectionWrapper>
             <span className={SectionHeading}>About</span>
             <section className={SubSection}>
-              <AboutList>{resto.phone}</AboutList>
-              <AboutList>{resto.delivery ? 'Delivery' : 'No Delivery'}</AboutList>
+              {resto.phone && <AboutList>{resto.phone || 'No Phone'}</AboutList>}
+              {resto.delivery && <AboutList>{resto.delivery ? 'Delivery' : 'No Delivery'}</AboutList>}
               <AboutList>{`Open ${resto.opening_hour} - ${resto.closing_hour}`}</AboutList>
               {resto.others && <AboutList>{resto.others}</AboutList>}
             </section>
@@ -219,7 +219,7 @@ class Details extends Component {
               resto.reviews &&
                 resto.reviews.map(review => {
                   return (
-                    <CommentSection 
+                    <CommentSection
                       key={review.id}
                       displayPic={review.avatar}
                       name={review.name}

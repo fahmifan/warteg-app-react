@@ -9,7 +9,7 @@ import Footer from '../../components/Footer';
 import * as actions from '../../store/actions/auth';
 
 class SignIn extends Component {
-  
+
   state = {
     cred: null,
     invalid: false,
@@ -18,10 +18,6 @@ class SignIn extends Component {
 
   backArrowClicked = () => {
     this.props.history.push('/')
-  }
-
-  masukBtnClicked = () => {
-
   }
 
   daftarClicked = () => {
@@ -59,7 +55,6 @@ class SignIn extends Component {
         invalid: true,
         displayErrors: true,
       });
-      console.log("error");
       return;
     }
     const form = event.target;
@@ -68,13 +63,11 @@ class SignIn extends Component {
     for (let name of data.keys()) {
       const input = form.elements[name];
       const parserName = input.dataset.parse;
-      console.log('parser name is', parserName);
       if (parserName) {
         const parsedValue = this.inputParsers[parserName](data.get(name))
         data.set(name, parsedValue);
       }
     }
-    console.log(data);
     this.setState({
     	cred: this.toJson(data),
       invalid: false,

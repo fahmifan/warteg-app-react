@@ -7,8 +7,7 @@ const inputField = (props) => (
       pattern={props.pattern}
       data-parse={props.dataParse}  
       placeholder={`${props.placeholder}`} 
-      className="w-100 h2 font-nunito ph2 mt2 br2 pv1 wg-black ba b--black-20" 
-      style={{}}
+      className={`w-100 h2 font-nunito ph2 mt2 br2 pv1 wg-black ba b--black-20 ${props.error && 'b--red-50'}`} 
       required />
 );
 

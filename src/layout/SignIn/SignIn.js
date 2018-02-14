@@ -77,9 +77,15 @@ class SignIn extends Component {
     this.props.onLogin(this.toJson(data));
   }
 
-  componentDidUpdate() {
-    if(this.props.isLogedIn) {
+  componentWillReceiveProps(nextProps) {
+    if(this.props.isLogedIn !== nextProps.isLogedIn) {
       this.props.history.push('/');
+    }
+    if(this.state.error !== null) {
+      this.setState({
+        displayErrors: true,
+        invalid: true
+      })
     }
   }
 
@@ -104,12 +110,15 @@ class SignIn extends Component {
           <InputField 
             placeholder="Email"
             name="email"
-            type="email" />
+            type="email"
+            error={this.props.error ? true : false} />
           <InputField 
             placeholder="Kata Sandi"
             name="password"
             type="password"
-            pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"/>
+            pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"
+            error={this.props.error ? true : false} />
+          {this.props.error == null ? null : <p className="tc font-nunito dark-red">{this.props.error.response.data}</p> }
           <Button type="submit">Masuk</Button>
           <p className="tc ma0 pt3 font-nunito wg-black f5">
             Belum mendaftar? <span onClick={this.daftarClicked} className="link dim wg-blue">Daftar</span> Sekarang</p>

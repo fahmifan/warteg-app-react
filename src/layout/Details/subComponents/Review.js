@@ -109,4 +109,11 @@ class Review extends Component {
     );    
   }  
 }
-export default Review;
+
+const mapStateToProps = state => {
+  return {
+    id_user: state.auth.id,
+    token: state.auth.token
+  }
+}
+

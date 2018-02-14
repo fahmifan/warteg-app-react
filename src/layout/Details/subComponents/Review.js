@@ -50,7 +50,7 @@ const SendButton = styled.button`
 
 class Review extends Component {
   state = {
-    rating: 0,
+    score: 0,
     review: ''
   }
  

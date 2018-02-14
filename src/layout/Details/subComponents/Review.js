@@ -87,13 +87,13 @@ class Review extends Component {
   }
 
   render() {
-    const {rating} = this.state;
+    const {score} = this.state;
     return (
       <ReviewWrapper className="flex flex-wrap justify-center font-nunito">
         <StarRate 
           name="rate1" 
           starCount={5}
-          value={rating}
+          value={score}
           emptyStarColor='#eee'
           onStarClick={this.onStarClick.bind(this)}
         />

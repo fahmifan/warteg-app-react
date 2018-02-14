@@ -51,8 +51,7 @@ const SendButton = styled.button`
 class Review extends Component {
   state = {
     score: 0,
-    review: '',
-    inputEvent: null
+    review: ''
   }
  
   onInputChange = (event) => {
